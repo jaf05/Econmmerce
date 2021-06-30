@@ -1,0 +1,10 @@
+
+//Importando colores
+@import "./color.scss";
+/*el componente de layout*/
+@import "../layout/basicLayout/BasicLayout.scss";
+//Importando componente del header
+@import "../componente/header/Header.scss";
+@import "../componente/header//TopBar/TopBar.scss";
+//importando el componente del menu
+@import "../componente/Menu/Menu.scss";
