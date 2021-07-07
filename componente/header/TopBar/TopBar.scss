@@ -26,34 +26,27 @@
      align-items: center;
      justify-content: flex-end;
      .ui.icon.input > input{
-        padding-right: 5px !important;
+        padding-right: 2px !important;
     }
      .ui.input{
          align-items: center;
-        margin-right: 25px;
+        margin-right: 20px;
      }
      
      input{
          background-color: transparent !important;
          border: 0;
-         border-bottom: 2px solid #fff !important;
+         border-bottom: 2px solid royalblue !important;
          border-radius: 0;
          color: #fff !important;
          padding: 5px 0 !important;
-         width: 22rem;
+         width: 10rem;
          font-size: 2rem;
          transition: width 0.10s;
          &:focus{
-             width:35rem;
+             width:20rem;
          }
         
      }
-     i{
-        color: $primary;
-        opacity: 1 !important;
-        font-size: 25px;
-        right:  -5rem !important;
-
-    }
     }
 }

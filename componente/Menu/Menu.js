@@ -1,6 +1,12 @@
 import {Container, Menu, Grid, Icon, Label } from "semantic-ui-react";
 import Link from "next/link";
-export default function MenuW(params) {
+import Basic from "../Modal/basicModal/BasicModal";
+import Auth from "../auth/Auth";
+import { useState } from "react";
+export default function MenuW() {
+    const [showModal, setShowModal]  = useState(false);
+    const onShowModal = () => setShowModal(true);
+    const onCloseModal = () => setShowModal(false);
     return(
         <div className="menu">
         <Container>
@@ -9,66 +15,73 @@ export default function MenuW(params) {
               <Todo/>
             </Grid.Column>
             <Grid.Column className="menu_right" width={10}>
-            <MenuOptions/>
+            <MenuOptions onShowModal={onShowModal}/>
             </Grid.Column>
                         </Grid>
         </Container>
+        <Basic 
+        show={showModal}
+         setShow={setShowModal}
+         title ="Ingresar" 
+         size="small">
+           <Auth onCloseModal/>
+        </Basic>
         </div>
     );
 }
 function Todo(){
     return(
         <Menu>
-            <Link href="/lacteos">
+            <Link href="/general">
                 <a>
-                <Menu.Item> Lacteos </Menu.Item>
+                <Menu.Item> General </Menu.Item>
                 </a>
             </Link>
 
-            <Link href="/bebidas">
+            <Link href="/ficcion">
                 <a>
 
-                <Menu.Item> Bebidas </Menu.Item>
+                <Menu.Item> Ficción </Menu.Item>
                 
                 </a>
            
             </Link>
 
-            <Link href="/frutas">
+            <Link href="/No_Ficción">
                 <a>
 
-                <Menu.Item>  Vegetales </Menu.Item>
+                <Menu.Item>  No Ficción </Menu.Item>
                 
                 </a>
             
             </Link>
 
-            <Link href="/carnes">
+            <Link href="/Infantil">
                 <a>
-                <Menu.Item> Carne </Menu.Item>
+                <Menu.Item> Infantil </Menu.Item>
              
                 </a>
             
             </Link>
-
-            <Link href="/insumos">
+            <Link href="/Juveniles">
                 <a>
-                
-                <Menu.Item> Insumos </Menu.Item>
-                
+                <Menu.Item> Juveniles </Menu.Item>
+             
                 </a>
+            
             </Link>
            
            
         </Menu>
     )
 }
-function MenuOptions(){
+function MenuOptions(props){
+    const {onShowModal} = props;
     return(
         <Menu>
-<Menu.Item>
+<Menu.Item onClick={onShowModal}>
             <Icon name="user outline"/>
-            Cuenta
+            Usuarios
         </Menu.Item>
         </Menu>
         

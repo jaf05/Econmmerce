@@ -18,7 +18,7 @@ function Lg(){
     return(
         <Link href="/">
             <a>
-            <Image src="/logo.png" alt="Abarrotes"/>
+            <Image src="/logos.jpg" alt="Abarrotes"/>
             </a>
         </Link>
        
@@ -26,6 +26,6 @@ function Lg(){
 }
 function Buscar(){
     return(
-        <Input id="buscar-todo" icon={{name:"search"}}/>
+        <Input id="buscar-todo"/>
     )
 }
