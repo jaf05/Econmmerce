@@ -1,4 +1,21 @@
 @import "./index.scss";
-body{
-background-color: azure;
+.ui.form{
+    .ui.input{
+        input{
+            border: 1px solid $border-grey-light;
+            font-size: 15px;
+
+        }
+
+    }
+    .action{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .ui.button.submit{
+        background-color: orangered;
+        color:$font-light;
+        margin: 0;
+    }
 }

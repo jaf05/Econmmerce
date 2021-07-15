@@ -7,6 +7,7 @@ export default function MenuW() {
     const [showModal, setShowModal]  = useState(false);
     const onShowModal = () => setShowModal(true);
     const onCloseModal = () => setShowModal(false);
+    const [titleModal, setTitleModal] = useState("Ingresar Cuenta");
     return(
         <div className="menu">
         <Container>
@@ -19,12 +20,10 @@ export default function MenuW() {
             </Grid.Column>
                         </Grid>
         </Container>
-        <Basic 
-        show={showModal}
-         setShow={setShowModal}
-         title ="Ingresar" 
+        <Basic show={showModal} setShow={setShowModal}
+         title ={titleModal} 
          size="small">
-           <Auth onCloseModal/>
+           <Auth onCloseModal={onCloseModal} setTitleModal = {setTitleModal}/>
         </Basic>
         </div>
     );
